@@ -1,0 +1,96 @@
+/* App.css — estilos complementares e utilitários de layout */
+
+/* ─── Animações de entrada de página ────────────────────────── */
+.page-enter {
+  animation: fadeUp 0.3s ease both;
+}
+
+/* ─── Sidebar layout ─────────────────────────────────────────── */
+/* A sidebar é fixada em 256 px; suavizamos com transições */
+.sidebar-item {
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────── */
+/* Adiciona efeito hover suave nos cards clicáveis */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* ─── Badges de status ───────────────────────────────────────── */
+/* Tamanho padronizado e letra levemente espaçada */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Form fields ────────────────────────────────────────────── */
+/* Transições suaves para focus nos inputs */
+input, select, textarea {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  outline: none;
+}
+
+/* ─── Botões ─────────────────────────────────────────────────── */
+button {
+  transition: all 0.15s ease;
+}
+
+/* ─── Toast / notificação ────────────────────────────────────── */
+.toast {
+  animation: slideIn 0.3s ease both;
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+}
+
+/* ─── Modal backdrop ─────────────────────────────────────────── */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.5);
+}
+
+/* ─── Tabelas / listas de items ──────────────────────────────── */
+.list-row {
+  transition: background 0.12s ease;
+}
+.list-row:hover {
+  background: var(--surface-2) !important;
+}
+
+/* ─── Utilidades de texto ────────────────────────────────────── */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ─── Loading spinner ────────────────────────────────────────── */
+.spinner {
+  border-radius: 50%;
+  border-color: var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+
+/* ─── Responsive helpers ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
