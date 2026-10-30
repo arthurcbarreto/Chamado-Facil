@@ -72,6 +72,9 @@ public class AdministradorService {
         admin.setNome(dto.getNome());
         admin.setEmail(dto.getEmail());
         admin.setCargo(dto.getCargo());
+        if (dto.getSenha() != null && !dto.getSenha().isBlank()) {
+            admin.setSenha(passwordEncoder.encode(dto.getSenha()));
+        }
         return toDTOInternal(administradorRepository.save(admin));
     }
 
